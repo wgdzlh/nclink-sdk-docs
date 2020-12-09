@@ -75,12 +75,11 @@ from nclink_client import DevClient
 
 if __name__ == '__main__':
     try:
-        mc1 = DevClient()
+        mc1 = DevClient("127.0.0.1", 1883, "STRESS_TEST_00001", False)
     except Exception as e:
         mc1 = None
-        print("连接到设备发生异常: \n" + se.msg)
+        print("连接到设备发生异常: \n" + e.msg)
     if not mc1:
         print("连接到设备发生异常，退出")
 ```
-
 
