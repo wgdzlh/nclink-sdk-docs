@@ -1,17 +1,17 @@
-# QueryRequestPDU.Validate
+# SetRequestPDU.Validate
 
 ## 声明
 - C# 版：
 
 ``` C#
-public class QueryRequestPDU
+public class SetRequestPDU
 {
     public bool Validate();
 }
 ```
 
 ## 描述
-本API为QueryRequestPDU类成员方法，通过QueryRequestPDU对象调用，用于对该对象包含的各属性字段有效性进行验证。
+本API为SetRequestPDU类成员方法，通过SetRequestPDU对象调用，用于对该对象包含的各属性字段有效性进行验证。
 
 ## 参数
 无
@@ -34,15 +34,15 @@ namespace nclink_client_app
         static void Main(string[] args)
         {
             string path = "STATUS";
-            QueryRequestPDU qrpdu = new QueryRequestPDU();
-            qrpdu.Path = path;
-            if (qrpdu.Validate())
+            SetRequestPDU srpdu = new SetRequestPDU();
+            srpdu.Path = path;
+            if (srpdu.Validate())
             {
-                Console.WriteLine("查询对象 {0} 有效", path);
+                Console.WriteLine("设置对象 {0} 有效", path);
             }
             else
             {
-                Console.WriteLine("错误：查询对象 {0} 无效", path);
+                Console.WriteLine("错误：设置对象 {0} 无效", path);
             }
             Console.ReadKey();
         }

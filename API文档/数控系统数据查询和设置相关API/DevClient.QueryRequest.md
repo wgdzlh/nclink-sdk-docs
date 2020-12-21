@@ -87,6 +87,11 @@ namespace nclink_client_app
             {
                 QueryRequestPDU qrpdu = new QueryRequestPDU();
                 qrpdu.Path = path;
+                if (path.Contains("@REG") || path.Contains("@AXIS") || path.Contains("@SYS") ||
+                    path.Contains("@MACRO") || path.Contains("@VAR_"))
+                {
+                    qrpdu.Indexs = new List<string> { "0-9", "13", "19-25" };
+                }
                 if (qrpdu.Validate())
                 {
                     wantQueryPDUList.Add(qrpdu);

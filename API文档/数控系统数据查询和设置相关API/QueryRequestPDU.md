@@ -15,15 +15,15 @@ public class QueryRequestPDU
 
 | 属性名称 | 类型 | 说明 |
 | --- | :-: | --- |
-| Id | string | 请求数据包本身的ID |
+| Id | string | 请求数据包的ID |
 | Path | string | 请求目标的路径 |
-| Indexs | List<string> | 请求的索引列表 |
+| Indexs | List\<string\> | 请求的索引列表 |
 | Operation | string | 操作类型 |
 | Keys | List\<string\> | 请求的关键字列表 |
 | Offset | int | 请求目标的偏移量 |
 | Length | int | 请求目标的长度 |
 | RequestMsg | byte[] | 请求消息体 |
-| BeginTime | long | 请求开始的时间戳，毫秒级 |
+| BeginTime | long | 请求开始的时间戳（毫秒） |
 
 ## 参数
 无

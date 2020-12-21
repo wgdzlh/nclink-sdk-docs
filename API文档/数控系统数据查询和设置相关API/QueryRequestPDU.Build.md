@@ -4,7 +4,7 @@
 - C# 版：
 
 ``` C#
-public class DevClient
+public class QueryRequestPDU
 {
     public bool Build(string clientId = null, long msgId = 0);
 }
