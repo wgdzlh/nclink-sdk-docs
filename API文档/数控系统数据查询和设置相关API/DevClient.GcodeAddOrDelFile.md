@@ -25,7 +25,7 @@ public class DevClient
 
 ## 返回值与异常
 - 期望返回值：请求到的文件操作结果，即一个GcodeAddOrDelFileResponsePDU对象
-- 各类异常：无异常抛出，请求失败信息通过日志及返回值GcodeAddOrDelFileResponsePDU对象的RetCode属性给出，详见NcLinkResponseCode枚举类包含的错误类型。
+- 各类异常：无异常抛出，请求失败信息通过日志及返回值GcodeAddOrDelFileResponsePDU对象的RetCode属性给出，详见NcLinkResponseCode枚举类包含的错误类型
 
 ## 代码
 - C# 版：

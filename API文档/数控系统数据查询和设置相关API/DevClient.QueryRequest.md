@@ -19,7 +19,7 @@ public class DevClient
 
 ## 返回值与异常
 - 期望返回值：请求到的查询结果，即一个QueryResponsePDU对象
-- 各类异常：无异常抛出，请求失败信息通过日志及返回值QueryResponsePDU对象的RetCode属性给出，各类RetCode见如下代码示例，即NcLinkResponseCode枚举类包含的几种错误类型。
+- 各类异常：无异常抛出，请求失败信息通过日志及返回值QueryResponsePDU对象的RetCode属性给出，各类RetCode见如下代码示例，即NcLinkResponseCode枚举类包含的几种错误类型
 
 ## 代码
 - C# 版：
@@ -87,6 +87,11 @@ namespace nclink_client_app
             {
                 QueryRequestPDU qrpdu = new QueryRequestPDU();
                 qrpdu.Path = path;
+                if (path.Contains("@REG") || path.Contains("@AXIS") || path.Contains("@SYS") ||
+                    path.Contains("@MACRO") || path.Contains("@VAR_"))
+                {
+                    qrpdu.Indexs = new List<string> { "0-9", "13", "19-25" };
+                }
                 if (qrpdu.Validate())
                 {
                     wantQueryPDUList.Add(qrpdu);
