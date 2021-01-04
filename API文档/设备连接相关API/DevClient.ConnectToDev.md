@@ -11,7 +11,7 @@ public class DevClient
 ```
 
 ## 描述
- 本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于实际连接到MQTT代理器及设备。
+本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于实际连接到MQTT代理器及设备。
 
 ## 参数
 1. timeoutSecond：连接超时阈值，单位：秒

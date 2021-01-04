@@ -18,7 +18,7 @@ class DevClient:
 ```
 
 ## 描述
- 本API为DevClient类构造函数，可以返回一个DevClient对象作为客户端句柄，用于后续客户端连接MQTT、数据传输的管理。
+本API为DevClient类构造函数，可以返回一个DevClient对象作为客户端句柄，用于后续客户端连接MQTT、数据传输的管理。
 
 ## 参数
 1. BrokerIP：MQTT代理服务器IP

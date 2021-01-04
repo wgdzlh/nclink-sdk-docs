@@ -1,4 +1,4 @@
-# DevClient.IsConnectToDev
+# DevClient.GetDevPath2IdMap
 
 ## 声明
 - C# 版：
@@ -6,18 +6,18 @@
 ``` C#
 public class DevClient
 {
-    public bool IsConnectToDev();
+    public Dictionary<string, string> GetDevPath2IdMap();
 }
 ```
 
 ## 描述
-本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于检查是否连接到设备。
+本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于获取设备路径对应ID的字典。
 
 ## 参数
-无参数
+无
 
 ## 返回值与异常
-- 期望返回值：反映是否已连接到设备的bool值
+- 期望返回值：一个“设备路径-ID”key-value对构成的字典对象，可为null
 - 各类异常：无异常抛出
 
 ## 代码
@@ -25,6 +25,7 @@ public class DevClient
 
 ``` c#
 using System;
+using System.Collections.Generic;
 using nclink_client;
 namespace nclink_client_app
 {
@@ -45,14 +46,14 @@ namespace nclink_client_app
             if (mc1 != null && mc1.ConnectToDev(3))
             {
                 Console.WriteLine("连接设备成功");
-                Console.WriteLine("测试连接状态：");
-                if (mc1.IsConnectToDev())
+                Dictionary<string, string> dict = mc1.GetDevPath2IdMap();
+                if (dict != null)
                 {
-                    Console.WriteLine("已连接到设备");
+                    Console.WriteLine("获取PATH-ID字典成功");
                 }
                 else
                 {
-                    Console.WriteLine("未连接到设备");
+                    Console.WriteLine("获取PATH-ID字典失败");
                 }
             }
             else

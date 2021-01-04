@@ -11,7 +11,7 @@ public class DevClient
 ```
 
 ## 描述
- 本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于向设备发出查询请求。
+本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于向设备发出查询请求。
 
 ## 参数
 1. qrPdu：查询请求的目标字段，以QueryRequestPDU对象给出

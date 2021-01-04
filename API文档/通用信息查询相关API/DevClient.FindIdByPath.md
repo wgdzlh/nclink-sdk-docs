@@ -1,4 +1,4 @@
-# DevClient.IsConnectToDev
+# DevClient.FindIdByPath
 
 ## 声明
 - C# 版：
@@ -6,18 +6,18 @@
 ``` C#
 public class DevClient
 {
-    public bool IsConnectToDev();
+    public string FindIdByPath(string path);
 }
 ```
 
 ## 描述
-本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于检查是否连接到设备。
+本API为DevClient类成员方法，通过DevClient对象（客户端句柄）调用，用于获取某个设备路径对应的ID。
 
 ## 参数
-无参数
+1. path：需要查询ID的设备路径
 
 ## 返回值与异常
-- 期望返回值：反映是否已连接到设备的bool值
+- 期望返回值：所查询的设备路径对应的ID，即一个string对象，可为null
 - 各类异常：无异常抛出
 
 ## 代码
@@ -45,14 +45,14 @@ namespace nclink_client_app
             if (mc1 != null && mc1.ConnectToDev(3))
             {
                 Console.WriteLine("连接设备成功");
-                Console.WriteLine("测试连接状态：");
-                if (mc1.IsConnectToDev())
+                string id = mc1.FindIdByPath("STATUS");
+                if (id != null)
                 {
-                    Console.WriteLine("已连接到设备");
+                    Console.WriteLine("获取ID成功：" + id);
                 }
                 else
                 {
-                    Console.WriteLine("未连接到设备");
+                    Console.WriteLine("获取ID失败");
                 }
             }
             else
